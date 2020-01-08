@@ -10,6 +10,14 @@ import java.util.concurrent.*;
  */
 
 public class ThreadPoolUtil {
+    /**
+     * 新建线程池
+     * @param corePoolSize 初始化大小
+     * @param maximumPoolSize 最大大小
+     * @param keepAliveTime 存活时间
+     * @param unit 时间单位
+     * @return 线程池
+     */
     public static ExecutorService createThreadPool(int corePoolSize,
                                                    int maximumPoolSize,
                                                    long keepAliveTime,
