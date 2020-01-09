@@ -58,3 +58,8 @@ then
 ```
 compile 'com.ixiongyu:xyutils:0.0.2'
 ````
+
+
+## 注意
+如需要使用sigar,请下载对应的依赖到对应的系统路径，详情：
+[点击查看](https://blog.csdn.net/weixin_42219075/article/details/81099909)
