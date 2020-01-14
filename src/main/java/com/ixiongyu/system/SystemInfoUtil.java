@@ -15,9 +15,14 @@ import org.hyperic.sigar.*;
  * @version Create at ：2020/1/9 8:27 下午
  */
 
-public class SystemUtil {
+public class SystemInfoUtil {
 
-
+    public static void main(String[] args) throws SigarException {
+     getMemoryInfo();
+    }
+    /**
+     * 获取基础jdk信息
+     */
     public static SystemProperty getProperty() throws UnknownHostException {
         Runtime r = Runtime.getRuntime();
         Properties props = System.getProperties();
@@ -69,6 +74,9 @@ public class SystemUtil {
                 .build();
     }
 
+    /**
+     * 获取内存
+     */
     public static SystemMemory getMemoryInfo() throws SigarException {
         Sigar sigar = new Sigar();
 
@@ -97,6 +105,9 @@ public class SystemUtil {
                 .systemSwap(systemSwap).build();
     }
 
+    /**
+     * 获取cpu信息
+     */
     public static SystemCpuInfo getCpuInfo() throws SigarException {
         Sigar sigar = new Sigar();
         CpuInfo[] infos = sigar.getCpuInfoList();
@@ -125,7 +136,9 @@ public class SystemUtil {
         return systemCpuInfo;
     }
 
-
+    /**
+     * 获取操作系统信息
+     */
     public static SystemOsInfo getOsInfo() {
         OperatingSystem os = OperatingSystem.getInstance();
         return SystemOsInfo.builder().osArch(os.getArch())
@@ -142,7 +155,9 @@ public class SystemUtil {
                 .build();
 
     }
-
+    /**
+     * 获取用户信息
+     */
     public static List<SystemWho> getUsrInfo() throws SigarException {
         Sigar sigar = new Sigar();
         Who[] whos = sigar.getWhoList();
@@ -160,7 +175,10 @@ public class SystemUtil {
         return systemWhoList;
     }
 
-    public static List<SystemFileSystem> getFileSydtemInfo() throws Exception {
+    /**
+     * 获取文件系统信息
+     */
+    public static List<SystemFileSystem> getFileSystemInfo() throws Exception {
         Sigar sigar = new Sigar();
         List<SystemFileSystem> systemFileSystems = new ArrayList<>();
         FileSystem[] fsList = sigar.getFileSystemList();
@@ -216,6 +234,9 @@ public class SystemUtil {
         return systemFileSystems;
     }
 
+    /**
+     * 获取网络信息
+     */
     public static List<SystemNetInfo> getNetInfo() throws Exception {
         Sigar sigar = new Sigar();
         List<SystemNetInfo> systemNetInfos = new ArrayList<>();
@@ -245,6 +266,9 @@ public class SystemUtil {
         return systemNetInfos;
     }
 
+    /**
+     * 获取网卡信息
+     */
     public static List<SystemEthernetInfo> getEthernetInfo() throws SigarException {
         Sigar sigar;
         sigar = new Sigar();

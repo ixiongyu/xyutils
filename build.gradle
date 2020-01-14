@@ -9,10 +9,12 @@ buildscript {
 
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '4.0.1'
 }
 apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.johnrengelman.shadow'
 group 'com.ixiongyu'
-version '0.0.2'
+version '0.0.4'
 sourceCompatibility = 1.8
 
 repositories {
@@ -21,16 +23,18 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.guava:guava:28.2-jre'
-    compile 'org.hyperic:sigar:1.6.5.132'
-    compile 'org.projectlombok:lombok:1.18.10'
-    annotationProcessor "org.projectlombok:lombok:1.16.16"
+    implementation 'com.google.guava:guava:28.2-jre'
+    implementation 'org.hyperic:sigar:1.6.5.132'
+    implementation 'com.squareup.moshi:moshi:1.9.2'
+    testCompile 'org.testng:testng:7.1.0'
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor "org.projectlombok:lombok:1.18.10"
 }
 publish {
     userOrg = 'ixiongyu'
     groupId = 'com.ixiongyu'
     artifactId = 'xyutils'
-    publishVersion = '0.0.2'
+    publishVersion = '0.0.4'
     desc = 'Oh hi, this is a nice description for a project, right?'
     website = 'https://github.com/novoda/bintray-release'
 
