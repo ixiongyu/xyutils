@@ -40,4 +40,5 @@ gradle/
 gradlew
 gradlew.bat
 settings.gradle
-shell
+update.sh
+/update.sh

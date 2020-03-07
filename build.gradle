@@ -14,7 +14,7 @@ plugins {
 apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.github.johnrengelman.shadow'
 group 'com.ixiongyu'
-version '0.0.4'
+version '0.0.4.2'
 sourceCompatibility = 1.8
 
 repositories {
@@ -34,7 +34,7 @@ publish {
     userOrg = 'ixiongyu'
     groupId = 'com.ixiongyu'
     artifactId = 'xyutils'
-    publishVersion = '0.0.4'
+    publishVersion = '0.0.4.2'
     desc = 'Oh hi, this is a nice description for a project, right?'
     website = 'https://github.com/novoda/bintray-release'
 
